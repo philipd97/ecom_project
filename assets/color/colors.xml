@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <color name="purple_base">#5956E9</color>
+    <color name="blue_base">#5956E9</color>
     <color name="white_base">#F5F5F8</color>
     <color name="teal_btn">#58C0EA</color>
+    <color name="pinkish">#FAB8C3</color>
+    <color name="grey_secondary">#868686</color>
+    <color name="bottom_nav_bar_icon">#200E32</color>
 </resources>
