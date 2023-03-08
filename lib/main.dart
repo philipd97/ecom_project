@@ -2,7 +2,6 @@ import 'helpers/go_router_helper.dart';
 import 'package:flutter/services.dart';
 
 import 'gen/fonts.gen.dart';
-import 'views/get_started_page.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -36,7 +35,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return Sizer(
@@ -46,13 +44,27 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: tealBasePrimary,
           fontFamily: FontFamily.raleway,
+          appBarTheme: const AppBarTheme(
+            titleTextStyle: TextStyle(color: Colors.black),
+            iconTheme: IconThemeData(color: Colors.black),
+          ),
         ),
         builder: (context, child) => GestureDetector(
           onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-          child: child!,
+          child: ScrollConfiguration(
+            behavior: _NoScrollBehavior(),
+            child: child!,
+          ),
         ),
         routerConfig: router,
       ),
     );
   }
+}
+
+class _NoScrollBehavior extends ScrollBehavior {
+  @override
+  Widget buildOverscrollIndicator(
+          BuildContext context, Widget child, ScrollableDetails details) =>
+      child;
 }
