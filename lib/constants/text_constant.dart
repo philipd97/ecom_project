@@ -18,7 +18,7 @@ class TextConstants {
   static const deliveryNotice = 'Delivery for FREE until the end of the month';
   static const checkout = 'Checkout';
   static const shippingInfo = 'Shipping information';
-  static const change = 'Change';
+  static const change = 'change';
   static const paymentMethod = 'Payment Method';
   static const confirmAndPay = 'Confirm and pay';
   static const products = 'Products';
@@ -26,14 +26,14 @@ class TextConstants {
   static const payNow = 'Pay now';
   static const noFavYet = 'No favorites yet';
   static const startOrderingDesc =
-      'Hit the orange button down below to Create an order';
+      'Hit the orange button down\nbelow to Create an order';
   static const startOrdering = 'Start ordering';
   static const search = 'Search';
   static const orderOnlineLabel = 'Order online\ncollect in store';
   static const seeMore = 'see more';
   static const basket = 'Basket';
   static const favorites = 'Favorites';
-  static const myProfile = 'My Profile';
+  static const myProfile = 'My profile';
   static const orderHistory = 'Order History';
   static const address = 'Address';
   static const editProfile = 'Edit Profile';
@@ -54,4 +54,6 @@ class TextConstants {
   static const hide = 'Hide';
   static const createAccount = 'Create Account';
   static const home = 'Home';
+  static const colors = 'Colors';
+  static const quantity = 'Quantity';
 }
