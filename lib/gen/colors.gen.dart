@@ -16,8 +16,20 @@ class ColorName {
   /// Color: #5956E9
   static const Color blueBase = Color(0xFF5956E9);
 
+  /// Color: #817EFF
+  static const Color blueBaseMoon = Color(0xFF817EFF);
+
   /// Color: #200E32
   static const Color bottomNavBarIcon = Color(0xFF200E32);
+
+  /// Color: #F4F4F8
+  static const Color dividerColor = Color(0xFFF4F4F8);
+
+  /// Color: #E3E3E3
+  static const Color greyBtnNotSelected = Color(0xFFE3E3E3);
+
+  /// Color: #F2F2F2
+  static const Color greyLightBackground = Color(0xFFF2F2F2);
 
   /// Color: #868686
   static const Color greySecondary = Color(0xFF868686);
