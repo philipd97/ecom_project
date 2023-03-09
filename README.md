@@ -1,16 +1,9 @@
-# ecom_project
+# Ecom Project
 
-A new Flutter project.
+### A Flutter ecommerce project inspired by [Rosina Picasso](https://dribbble.com/shots/14998627-Mobile-UI-Figma-Kit).
 
-## Getting Started
+# Motivation
+>The motivation behind this project is to challenge myself & to bring out other designer's work in dribble to live by coding! Along with exploring packages which mostly used by the Flutter community, for example flutter_hooks. freezed, etc.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Planning
+> I've planned to use **flutter_bloc** as the main state management, along with using Firebase services such as **user authentication** and **realtime database**. 
