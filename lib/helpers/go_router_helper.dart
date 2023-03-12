@@ -1,4 +1,5 @@
 import 'package:ecom_project/views/checkout_page.dart';
+import 'package:ecom_project/views/create_account_page.dart';
 import 'package:ecom_project/views/favorite_page.dart';
 import 'package:ecom_project/views/profile_page.dart';
 import 'package:ecom_project/views/search_page.dart';
@@ -10,6 +11,8 @@ import '../views/home_page.dart';
 import '../views/login_page.dart';
 import '../views/product_detail_page.dart';
 
+// TODO: CHANGE THIS
+
 final GoRouter router = GoRouter(
   routes: [
     GoRoute(
@@ -20,7 +23,6 @@ final GoRouter router = GoRouter(
           path: LoginPage.routeName,
           builder: (context, state) => const LoginPage(),
         ),
-        // CHANGE THIS
         GoRoute(
           path: HomePage.routeName,
           builder: (context, state) => const HomePage(),
@@ -48,6 +50,10 @@ final GoRouter router = GoRouter(
         GoRoute(
           path: SearchPage.routeName,
           builder: (context, state) => const SearchPage(),
+        ),
+        GoRoute(
+          path: CreateAccountPage.routeName,
+          builder: (context, state) => const CreateAccountPage(),
         ),
       ],
     ),

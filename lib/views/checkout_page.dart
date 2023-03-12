@@ -35,14 +35,11 @@ class CheckoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldCustomed(
+      titleLabel: TextConstants.checkout,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: sidePadding),
         child: Column(
           children: [
-            // const AppBarCustomed(
-            //   title: TextConstants.checkout,
-            // ),
-            SizedBox(height: 5.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
