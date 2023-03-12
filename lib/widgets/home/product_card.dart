@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ecom_project/constants/styling.dart';
 import 'package:ecom_project/gen/assets.gen.dart';
 import 'package:ecom_project/gen/colors.gen.dart';
@@ -9,7 +10,14 @@ import 'package:go_router/go_router.dart';
 import 'package:sizer/sizer.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
+  final CrossAxisAlignment crossAxisAlignment;
+  final EdgeInsets? padding;
+
+  const ProductCard({
+    super.key,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
+    this.padding,
+  });
 
   void _goToProductDetails(BuildContext context) {
     context.push('/${ProductDetailPage.routeName}');
@@ -21,6 +29,7 @@ class ProductCard extends StatelessWidget {
       builder: (context, constraint) {
         log('Main Constarint: $constraint ${constraint.maxHeight * 0.1}');
         final maxHeight = constraint.maxHeight;
+        final topBox = maxHeight * 0.2;
         final imageHeight = maxHeight * 0.420;
         final imageHeightTop = imageHeight * 0.15;
 
@@ -28,10 +37,11 @@ class ProductCard extends StatelessWidget {
           children: [
             Positioned(
               child: Padding(
-                padding: EdgeInsets.fromLTRB(3.w, 0.0, 3.w, 1.h),
+                padding: padding ?? EdgeInsets.fromLTRB(3.w, 0.0, 3.w, 1.h),
                 child: Column(
+                  crossAxisAlignment: crossAxisAlignment,
                   children: [
-                    SizedBox(height: maxHeight * 0.20),
+                    SizedBox(height: topBox),
                     Expanded(
                       child: Container(
                         clipBehavior: Clip.hardEdge,
@@ -48,20 +58,25 @@ class ProductCard extends StatelessWidget {
                               child: Column(
                                 children: [
                                   SizedBox(
-                                      height: imageHeight - imageHeightTop),
-                                  Text(
-                                    'Apple Watch',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20.0,
+                                    height: imageHeight - imageHeightTop,
+                                  ),
+                                  const Expanded(
+                                    child: AutoSizeText(
+                                      'Apple Watch',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20.0,
+                                      ),
                                     ),
                                   ),
                                   SizedBox(height: maxHeight * 0.035),
-                                  Text(
-                                    'Series 6 . Red',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      color: ColorName.greySecondary,
+                                  const Expanded(
+                                    child: Text(
+                                      'Series 6 . Red',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        color: ColorName.greySecondary,
+                                      ),
                                     ),
                                   ),
                                   SizedBox(height: maxHeight * 0.050),
@@ -72,9 +87,7 @@ class ProductCard extends StatelessWidget {
                                       fontSize: 17.0,
                                     ),
                                   ),
-                                  SizedBox(
-                                    height: constraint.maxHeight * 0.075,
-                                  )
+                                  SizedBox(height: maxHeight * 0.075)
                                 ],
                               ),
                             ),
