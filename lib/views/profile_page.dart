@@ -5,8 +5,7 @@ import 'package:sizer/sizer.dart';
 import '../constants/styling.dart';
 import '../constants/text_constant.dart';
 import '../gen/assets.gen.dart';
-import '../gen/colors.gen.dart';
-import '../helpers/extension_helpers.dart';
+import '../widgets/customized_sliver.dart';
 import '../widgets/scaffold_customed.dart';
 import '../widgets/white_card_layout.dart';
 
@@ -25,46 +24,11 @@ class ProfilePage extends StatelessWidget {
     final profPicSize = 5.75.h;
     final titleSpaceSizedBox = SizedBox(height: 3.h);
 
-    final expandedHeight = kToolbarHeight + 10.h;
-
-    final mediaQueryTop = MediaQuery.of(context).padding.top;
-    final collapsedAppBarHeight = kToolbarHeight + mediaQueryTop;
-    final expandedAppBarHeight = expandedHeight + mediaQueryTop;
-
     return ScaffoldCustomed(
       hasAppBar: false,
-      child: CustomScrollView(
+      child: CustomizedSliver(
+        title: TextConstants.myProfile,
         slivers: [
-          SliverAppBar(
-            backgroundColor: ColorName.greyLightBackground,
-            elevation: 0.0,
-            pinned: true,
-            expandedHeight: expandedHeight,
-            flexibleSpace: LayoutBuilder(
-              builder: (context, constraint) {
-                final paddingWidth = constraint.maxHeight.normalized(
-                  normalizedRangeMin: 72.0,
-                  normalizedRangeMax: sidePadding,
-                  selfRangeMin: collapsedAppBarHeight,
-                  selfRangeMax: expandedAppBarHeight,
-                );
-                return FlexibleSpaceBar(
-                  titlePadding: EdgeInsets.only(
-                    left: paddingWidth,
-                    bottom: 6,
-                  ),
-                  title: const Text(
-                    TextConstants.myProfile,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30.0,
-                      color: Colors.black,
-                    ),
-                  ),
-                );
-              },
-            ),
-          ),
           SliverList(
             delegate: SliverChildListDelegate(
               [
@@ -83,7 +47,7 @@ class ProfilePage extends StatelessWidget {
                             child: Column(
                               children: [
                                 SizedBox(height: profPicSize * 0.70),
-                                Text(
+                                const Text(
                                   'Name',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w600,
@@ -135,11 +99,6 @@ class ProfilePage extends StatelessWidget {
                       titleSpaceSizedBox,
                       _TitleTile(
                         title: TextConstants.cards,
-                        onTap: () {},
-                      ),
-                      titleSpaceSizedBox,
-                      _TitleTile(
-                        title: TextConstants.notifications,
                         onTap: () {},
                       ),
                       titleSpaceSizedBox,
