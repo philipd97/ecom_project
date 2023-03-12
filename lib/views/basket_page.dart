@@ -35,33 +35,7 @@ class BasketPage extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 5.h),
-            DecoratedBox(
-              decoration: BoxDecoration(
-                color: const Color(0xFFD3F2FF),
-                borderRadius: BorderRadius.circular(5.0),
-              ),
-              child: Padding(
-                padding: EdgeInsets.all(1.h),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(
-                      IconlyLight.notification,
-                      size: 24,
-                    ),
-                    SizedBox(width: 0.5.w),
-                    const Text(
-                      TextConstants.deliveryNotice,
-                      style: TextStyle(
-                        fontSize: 11.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            _BannerNotice(),
             SizedBox(height: 2.h),
             const BasketItem(),
             SizedBox(height: 2.h),
@@ -82,6 +56,41 @@ class BasketPage extends StatelessWidget {
                 ],
               ),
             )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _BannerNotice extends StatelessWidget {
+  const _BannerNotice({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: const Color(0xFFD3F2FF),
+        borderRadius: BorderRadius.circular(5.0),
+      ),
+      child: Padding(
+        padding: EdgeInsets.all(1.h),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(
+              IconlyLight.notification,
+              size: 24,
+            ),
+            SizedBox(width: 0.5.w),
+            const Text(
+              TextConstants.deliveryNotice,
+              style: TextStyle(
+                fontSize: 11.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ],
         ),
       ),
