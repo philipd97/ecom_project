@@ -1,6 +1,7 @@
 import 'package:ecom_project/views/checkout_page.dart';
 import 'package:ecom_project/views/favorite_page.dart';
 import 'package:ecom_project/views/profile_page.dart';
+import 'package:ecom_project/views/search_page.dart';
 import 'package:go_router/go_router.dart';
 
 import '../views/basket_page.dart';
@@ -43,6 +44,10 @@ final GoRouter router = GoRouter(
         GoRoute(
           path: ProfilePage.routeName,
           builder: (context, state) => const ProfilePage(),
+        ),
+        GoRoute(
+          path: SearchPage.routeName,
+          builder: (context, state) => const SearchPage(),
         ),
       ],
     ),
