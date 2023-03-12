@@ -42,7 +42,6 @@ class MyApp extends StatelessWidget {
         title: 'Ecom Project',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: tealBasePrimary,
           fontFamily: FontFamily.raleway,
           appBarTheme: const AppBarTheme(
             titleTextStyle: TextStyle(color: Colors.black),
