@@ -39,7 +39,6 @@ class TextConstants {
   static const editProfile = 'Edit Profile';
   static const shoppingAddress = 'Shopping address';
   static const cards = 'Cards';
-  static const notifications = 'Notifications';
   static const noHistoryYet = 'No history yet';
   static const profile = 'Profile';
   static const myOrders = 'My Orders';
@@ -56,4 +55,18 @@ class TextConstants {
   static const home = 'Home';
   static const colors = 'Colors';
   static const quantity = 'Quantity';
+  static const confirmPassword = 'Confirm Password';
+  static const shippingAddress = 'Shipping Address';
+  static const phoneNo = 'Phone No.';
+}
+
+extension BreakLine on String {
+  String breakLine() {
+    final splits = split(' ');
+    String finalString = '';
+    for (String data in splits) {
+      finalString += '$data\n';
+    }
+    return finalString;
+  }
 }
