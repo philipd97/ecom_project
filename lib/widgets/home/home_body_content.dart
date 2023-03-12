@@ -1,19 +1,21 @@
-import 'package:ecom_project/constants/styling.dart';
-import 'package:ecom_project/constants/text_constant.dart';
-import 'package:ecom_project/gen/assets.gen.dart';
-import 'package:ecom_project/gen/colors.gen.dart';
-import 'package:ecom_project/views/basket_page.dart';
-import 'package:ecom_project/views/favorite_page.dart';
-import 'package:ecom_project/views/profile_page.dart';
-import 'package:ecom_project/widgets/home/product_card.dart';
-import 'package:ecom_project/widgets/home/tappable_category.dart';
-import 'package:ecom_project/widgets/scaffold_customed.dart';
-import 'package:ecom_project/widgets/search_field.dart';
-import 'package:ecom_project/widgets/text_arrow_tappable.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconly/iconly.dart';
 import 'package:sizer/sizer.dart';
+
+import '../../constants/styling.dart';
+import '../../constants/text_constant.dart';
+import '../../gen/assets.gen.dart';
+import '../../gen/colors.gen.dart';
+import '../../views/basket_page.dart';
+import '../../views/favorite_page.dart';
+import '../../views/profile_page.dart';
+import '../../views/search_page.dart';
+import '../custom_row_search_field.dart';
+import '../scaffold_customed.dart';
+import '../text_arrow_tappable.dart';
+import 'product_card.dart';
+import 'tappable_category.dart';
 
 class HomeBodyContent extends StatelessWidget {
   final VoidCallback onPressDrawer;
@@ -32,30 +34,22 @@ class HomeBodyContent extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: kToolbarHeight),
-              Row(
-                children: [
-                  Material(
-                    type: MaterialType.transparency,
-                    shape: const CircleBorder(),
-                    clipBehavior: Clip.hardEdge,
-                    child: InkWell(
-                      onTap: onPressDrawer,
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Assets.icons.menuIcon.image(),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 1.5.w),
-                  Expanded(
+              CustomRowSearchField(
+                leadingWidget: Material(
+                  type: MaterialType.transparency,
+                  shape: const CircleBorder(),
+                  clipBehavior: Clip.hardEdge,
+                  child: InkWell(
+                    onTap: onPressDrawer,
                     child: Padding(
-                      padding: EdgeInsets.only(right: sidePadding),
-                      child: SearchField(
-                        onSubmitted: (value) => {},
-                      ),
+                      padding: const EdgeInsets.all(16.0),
+                      child: Assets.icons.menuIcon.image(),
                     ),
                   ),
-                ],
+                ),
+                onSubmitted: (value) {
+                  context.push('/${SearchPage.routeName}');
+                },
               ),
               SizedBox(height: 5.h),
               Text(
