@@ -12,7 +12,7 @@ import '../widgets/scaffold_customed.dart';
 import '../widgets/text_arrow_tappable.dart';
 
 class ProductDetailPage extends StatelessWidget {
-  static const routeName = 'product_detail_page';
+  static const routeName = '/product-detail-page';
 
   const ProductDetailPage({super.key});
 

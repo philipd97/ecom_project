@@ -1,3 +1,5 @@
+import 'package:ecom_project/views/home_page.dart';
+
 import '../widgets/custom_rounded_button.dart';
 
 import 'login_page.dart';
@@ -60,7 +62,7 @@ class GetStartedPage extends StatelessWidget {
           SizedBox(height: 5.h),
           FixedHorizonPadding(
             child: CustomRoundedButton(
-              onPressed: () => context.go('/${LoginPage.routeName}'),
+              onPressed: () => context.go(HomePage.routeName),
               label: TextConstants.getStarted,
               backgroundColor: Colors.white,
               textColor: ColorName.blueBase,

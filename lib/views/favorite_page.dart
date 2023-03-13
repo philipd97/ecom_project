@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class FavoritePage extends StatelessWidget {
-  static const routeName = 'favorite_page';
+  static const routeName = '/favorite-page';
 
   const FavoritePage({super.key});
 

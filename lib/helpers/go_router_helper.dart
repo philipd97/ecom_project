@@ -14,48 +14,47 @@ import '../views/product_detail_page.dart';
 // TODO: CHANGE THIS
 
 final GoRouter router = GoRouter(
+  debugLogDiagnostics: true,
   routes: [
     GoRoute(
       path: GetStartedPage.routeName,
       builder: (context, state) => const GetStartedPage(),
-      routes: [
-        GoRoute(
-          path: LoginPage.routeName,
-          builder: (context, state) => const LoginPage(),
-        ),
-        GoRoute(
-          path: HomePage.routeName,
-          builder: (context, state) => const HomePage(),
-        ),
-        GoRoute(
-          path: ProductDetailPage.routeName,
-          builder: (context, state) => const ProductDetailPage(),
-        ),
-        GoRoute(
-          path: BasketPage.routeName,
-          builder: (context, state) => const BasketPage(),
-        ),
-        GoRoute(
-          path: CheckoutPage.routeName,
-          builder: (context, state) => const CheckoutPage(),
-        ),
-        GoRoute(
-          path: FavoritePage.routeName,
-          builder: (context, state) => const FavoritePage(),
-        ),
-        GoRoute(
-          path: ProfilePage.routeName,
-          builder: (context, state) => const ProfilePage(),
-        ),
-        GoRoute(
-          path: SearchPage.routeName,
-          builder: (context, state) => const SearchPage(),
-        ),
-        GoRoute(
-          path: CreateAccountPage.routeName,
-          builder: (context, state) => const CreateAccountPage(),
-        ),
-      ],
+    ),
+    GoRoute(
+      path: HomePage.routeName,
+      builder: (_, __) => const HomePage(),
+    ),
+    GoRoute(
+      path: LoginPage.routeName,
+      builder: (context, state) => const LoginPage(),
+    ),
+    GoRoute(
+      path: CreateAccountPage.routeName,
+      builder: (context, state) => const CreateAccountPage(),
+    ),
+    GoRoute(
+      path: ProductDetailPage.routeName,
+      builder: (context, state) => const ProductDetailPage(),
+    ),
+    GoRoute(
+      path: BasketPage.routeName,
+      builder: (context, state) => const BasketPage(),
+    ),
+    GoRoute(
+      path: FavoritePage.routeName,
+      builder: (context, state) => const FavoritePage(),
+    ),
+    GoRoute(
+      path: ProfilePage.routeName,
+      builder: (context, state) => const ProfilePage(),
+    ),
+    GoRoute(
+      path: SearchPage.routeName,
+      builder: (context, state) => const SearchPage(),
+    ),
+    GoRoute(
+      path: CheckoutPage.routeName,
+      builder: (context, state) => const CheckoutPage(),
     ),
   ],
 );

@@ -13,7 +13,7 @@ import '../widgets/custom_icon_button.dart';
 import '../widgets/scaffold_customed.dart';
 
 class BasketPage extends StatelessWidget {
-  static const routeName = 'basket_page';
+  static const routeName = '/basket-page';
   const BasketPage({super.key});
 
   @override
@@ -49,7 +49,7 @@ class BasketPage extends StatelessWidget {
                   SizedBox(height: 4.h),
                   CustomRoundedButton(
                     onPressed: () =>
-                        GoRouter.of(context).push('/${CheckoutPage.routeName}'),
+                        GoRouter.of(context).push(CheckoutPage.routeName),
                     label: TextConstants.checkout,
                   ),
                   SizedBox(height: 2.h),

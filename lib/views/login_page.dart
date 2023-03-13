@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginPage extends StatelessWidget {
-  static const routeName = 'login_page';
+  static const routeName = '/login-page';
   const LoginPage({super.key});
 
   @override

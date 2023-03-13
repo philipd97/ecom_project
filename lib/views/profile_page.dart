@@ -10,7 +10,7 @@ import '../widgets/scaffold_customed.dart';
 import '../widgets/white_card_layout.dart';
 
 class ProfilePage extends StatelessWidget {
-  static const routeName = 'profile_page';
+  static const routeName = '/profile-page';
 
   const ProfilePage({super.key});
 

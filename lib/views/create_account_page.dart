@@ -9,7 +9,7 @@ import 'package:iconly/iconly.dart';
 import 'package:sizer/sizer.dart';
 
 class CreateAccountPage extends HookWidget {
-  static const routeName = 'create-account-page';
+  static const routeName = '/create-account-page';
 
   const CreateAccountPage({super.key});
 

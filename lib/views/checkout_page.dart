@@ -14,7 +14,7 @@ import 'package:iconly/iconly.dart';
 import 'package:sizer/sizer.dart';
 
 class CheckoutPage extends StatelessWidget {
-  static const routeName = 'checkout_page';
+  static const routeName = '/checkout-page';
   const CheckoutPage({super.key});
 
   void _openConfirmPaySheet(BuildContext context) {

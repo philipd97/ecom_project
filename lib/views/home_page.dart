@@ -1,5 +1,8 @@
+import 'package:ecom_project/views/create_account_page.dart';
+import 'package:ecom_project/views/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sizer/sizer.dart';
 
 import '../gen/colors.gen.dart';
@@ -9,7 +12,7 @@ import '../widgets/home/scaled_transform_widget.dart';
 import '../widgets/rounded_hollow.dart';
 
 class HomePage extends HookWidget {
-  static const routeName = 'home_page';
+  static const routeName = '/home-page';
 
   const HomePage({super.key});
 
@@ -64,6 +67,18 @@ class HomePage extends HookWidget {
         }
       },
       child: Scaffold(
+        floatingActionButton: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextButton(
+                onPressed: () => context.push('${LoginPage.routeName}'),
+                child: Text('login')),
+            TextButton(
+                onPressed: () =>
+                    context.push('${CreateAccountPage.routeName}'),
+                child: Text('register')),
+          ],
+        ),
         body: AnimatedBuilder(
           animation: moveRightController,
           builder: (ctx, child) => Stack(
