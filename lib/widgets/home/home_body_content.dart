@@ -14,7 +14,7 @@ import '../../views/search_page.dart';
 import '../custom_row_search_field.dart';
 import '../scaffold_customed.dart';
 import '../text_arrow_tappable.dart';
-import 'product_card.dart';
+import 'home_product_card.dart';
 import 'tappable_category.dart';
 
 class HomeBodyContent extends StatelessWidget {
@@ -48,7 +48,7 @@ class HomeBodyContent extends StatelessWidget {
                   ),
                 ),
                 onSubmitted: (value) {
-                  context.push('/${SearchPage.routeName}');
+                  context.push(SearchPage.routeName);
                 },
               ),
               SizedBox(height: 5.h),
@@ -78,7 +78,7 @@ class HomeBodyContent extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemCount: 5,
                     itemBuilder: (context, index) {
-                      return const ProductCard();
+                      return const HomeProductCard();
                     },
                   ),
                 ),
@@ -130,7 +130,7 @@ class _BottomNav extends StatelessWidget {
           ),
           IconButton(
             onPressed: () =>
-                GoRouter.of(context).push('/${FavoritePage.routeName}'),
+                GoRouter.of(context).push(FavoritePage.routeName),
             icon: const Icon(
               IconlyLight.heart,
               color: ColorName.bottomNavBarIcon,
@@ -138,7 +138,7 @@ class _BottomNav extends StatelessWidget {
           ),
           IconButton(
             onPressed: () =>
-                GoRouter.of(context).push('/${ProfilePage.routeName}'),
+                GoRouter.of(context).push(ProfilePage.routeName),
             icon: const Icon(
               IconlyLight.profile,
               color: ColorName.bottomNavBarIcon,
@@ -146,7 +146,7 @@ class _BottomNav extends StatelessWidget {
           ),
           IconButton(
             onPressed: () =>
-                GoRouter.of(context).push('/${BasketPage.routeName}'),
+                GoRouter.of(context).push(BasketPage.routeName),
             icon: const Icon(
               IconlyLight.buy,
               color: ColorName.bottomNavBarIcon,
