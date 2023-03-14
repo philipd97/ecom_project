@@ -1,3 +1,4 @@
+import 'package:ecom_project/widgets/buttons/clear_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:iconly/iconly.dart';
@@ -44,20 +45,7 @@ class SearchField extends HookWidget {
           IconlyLight.search,
           color: Colors.black,
         ),
-        suffixIcon: hasText.value
-            ? Material(
-                type: MaterialType.transparency,
-                shape: const CircleBorder(),
-                clipBehavior: Clip.hardEdge,
-                child: InkWell(
-                  onTap: () => controller.clear(),
-                  child: const Icon(
-                    Icons.cancel_outlined,
-                    color: ColorName.greySecondary,
-                  ),
-                ),
-              )
-            : null,
+        suffixIcon: hasText.value ? ClearButton(onTap: controller.clear) : null,
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(30.0)),
       ),
     );
