@@ -1,3 +1,4 @@
+import 'package:ecom_project/constants/styling.dart';
 import 'package:ecom_project/constants/text_constant.dart';
 import 'package:ecom_project/widgets/custom_rounded_button.dart';
 import 'package:ecom_project/widgets/custom_text_field.dart';
@@ -24,15 +25,18 @@ class CreateAccountPage extends HookWidget {
 
     return ScaffoldCustomed(
       hasAppBar: false,
-      bottomNavigationBar: CustomRoundedButton(
-        onPressed: () {},
-        label: TextConstants.createAccount,
+      bottomNavigationBar: Padding(
+        padding: buttonPadding,
+        child: CustomRoundedButton(
+          onPressed: () {},
+          label: TextConstants.createAccount,
+        ),
       ),
       child: CustomizedSliver(
         title: TextConstants.createAccount.breakLine(),
         slivers: [
           SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 10.w),
+            padding: EdgeInsets.symmetric(horizontal: sidePadding),
             sliver: SliverList(
               delegate: SliverChildListDelegate(
                 [
