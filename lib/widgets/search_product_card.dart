@@ -10,7 +10,7 @@ class SearchProductCard extends StatelessWidget {
   const SearchProductCard({super.key});
 
   void _goToProductDetails(BuildContext context) {
-    context.push('/${ProductDetailPage.routeName}');
+    context.push(ProductDetailPage.routeName);
   }
 
   @override

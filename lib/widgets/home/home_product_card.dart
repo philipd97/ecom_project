@@ -10,13 +10,10 @@ import 'package:go_router/go_router.dart';
 import 'package:sizer/sizer.dart';
 
 class HomeProductCard extends StatelessWidget {
-
-  const HomeProductCard({
-    super.key
-  });
+  const HomeProductCard({super.key});
 
   void _goToProductDetails(BuildContext context) {
-    context.push('/${ProductDetailPage.routeName}');
+    context.push(ProductDetailPage.routeName);
   }
 
   @override
