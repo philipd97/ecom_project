@@ -28,21 +28,6 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
-  final List<StaggeredTile> _list = [];
-
-  void _generateList() {
-    for (int i = 0; i < 5 * 2; i++) {
-      if (i.isEven) {
-        _list.add(const StaggeredTile(crossAxisCount: 2, mainAxisCount: 3));
-      } else {
-        _list.add(const StaggeredTile(crossAxisCount: 2, mainAxisCount: 1));
-      }
-    }
-    setState(() {});
-  }
-
-  // TODO: continue refactor this
-
   @override
   Widget build(BuildContext context) {
     return ScaffoldCustomed(
@@ -58,6 +43,13 @@ class _SearchPageState extends State<SearchPage> {
             onSubmitted: (value) {},
           ),
           SizedBox(height: 5.h),
+          Text(
+            'Found 6 results',
+            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                  fontWeight: FontWeight.w600,
+                ),
+          ),
+          SizedBox(height: 2.h),
           Expanded(
             child: GridView.builder(
               padding: EdgeInsets.only(
@@ -80,7 +72,7 @@ class _SearchPageState extends State<SearchPage> {
                         : Alignment.bottomCenter,
                     child: SizedBox(
                       height: constraint.maxHeight * 0.80,
-                      child: SearchProductCard(),
+                      child: const SearchProductCard(),
                     ),
                   );
                 },
