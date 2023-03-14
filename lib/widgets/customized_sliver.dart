@@ -2,8 +2,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ecom_project/constants/styling.dart';
 import 'package:ecom_project/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 import '../helpers/extension_helpers.dart';
+import 'package:ecom_project/gen/fonts.gen.dart';
 
 class CustomizedSliver extends StatelessWidget {
   final String title;
@@ -15,15 +15,29 @@ class CustomizedSliver extends StatelessWidget {
     required this.slivers,
   });
 
+  Size _textSize(String text, TextStyle textStyle, BuildContext context) {
+    final TextPainter painter = TextPainter(
+      text: TextSpan(text: text, style: textStyle),
+      textScaleFactor: MediaQuery.of(context).textScaleFactor,
+      textDirection: TextDirection.ltr,
+    )..layout();
+    return painter.size;
+  }
+
   @override
   Widget build(BuildContext context) {
-    // TODO: calculate text height & add to expandedheight instead
-
-    final expandedHeight = kToolbarHeight + 10.h;
+    const TextStyle textStyle = TextStyle(
+      fontSize: 34.0,
+      color: Colors.black,
+      fontFamily: FontFamily.raleway,
+      fontWeight: FontWeight.bold,
+    );
+    final Size textSize = _textSize(title, textStyle, context);
 
     final mediaQueryTop = MediaQuery.of(context).padding.top;
     final collapsedAppBarHeight = kToolbarHeight + mediaQueryTop;
-    final expandedAppBarHeight = expandedHeight + mediaQueryTop;
+    final expandedAppBarHeight =
+        kToolbarHeight + mediaQueryTop * 2 + textSize.height;
 
     return CustomScrollView(
       slivers: [
@@ -31,7 +45,7 @@ class CustomizedSliver extends StatelessWidget {
           backgroundColor: ColorName.greyLightBackground,
           elevation: 0.0,
           pinned: true,
-          expandedHeight: expandedHeight,
+          expandedHeight: expandedAppBarHeight,
           flexibleSpace: LayoutBuilder(
             builder: (context, constraint) {
               final paddingWidth = constraint.maxHeight.normalized(
