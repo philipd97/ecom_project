@@ -77,6 +77,7 @@ class HomePage extends HookWidget {
                 onPressed: () =>
                     context.push('${CreateAccountPage.routeName}'),
                 child: Text('register')),
+            SizedBox(height: 2.h),
           ],
         ),
         body: AnimatedBuilder(
